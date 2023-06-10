@@ -9,7 +9,7 @@
     "target": "es6",
     "module": "es2022",
     "moduleResolution": "node",
-    "sourceMap": true,
+    "sourceMap": false,
     "checkJs": true,
     "allowJs": true,
     "outDir": "./dist",
