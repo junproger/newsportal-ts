@@ -1,8 +1,10 @@
 import { sourcesItems } from './../../../types/sourcesItems';
+import { typeSources } from './../types/typeSources';
+
 import './sources.css';
 
-class Sources {
-    draw(data: sourcesItems[]): void {
+class Sources implements typeSources {
+    draw(data: readonly sourcesItems[]): void {
         const fragment: DocumentFragment = <DocumentFragment>document.createDocumentFragment();
         const sourceItemTemp: HTMLTemplateElement = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 
