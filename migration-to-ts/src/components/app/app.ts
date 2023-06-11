@@ -17,9 +17,12 @@ class App implements typeApp {
     start() {
         const blockSources: HTMLElement = <HTMLElement>document.querySelector('.sources');
 
-        blockSources.addEventListener('click', (event: MouseEvent) =>
-            this.controller.getNews(event, (data: articlesApi) => this.view.drawNews(data))
-        );
+        blockSources
+            ? blockSources.addEventListener('click', (event: MouseEvent) =>
+                  this.controller.getNews(event, (data: articlesApi) => this.view.drawNews(data))
+              )
+            : null;
+
         this.controller.getSources((data: sourcesApi) => this.view.drawSources(data));
     }
 }
