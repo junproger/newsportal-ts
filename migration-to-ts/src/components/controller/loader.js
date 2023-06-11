@@ -7,6 +7,7 @@ class Loader {
     getResp(
         { endpoint, options = {} },
         callback = () => {
+            console.error('No callback for GET response');
             throw new Error('No callback for GET response');
         }
     ) {
@@ -36,7 +37,10 @@ class Loader {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
-            .then((data) => callback(data))
+            .then((data) => {
+                console.log(data);
+                callback(data);
+            })
             .catch((err) => {
                 throw Error(err.message);
             });
