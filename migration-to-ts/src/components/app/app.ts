@@ -3,8 +3,9 @@ import { AppView } from '../view/appView';
 
 import { articlesApi } from '../../types/articlesApi';
 import { sourcesApi } from '../../types/sourcesApi';
+import { typeApp } from './types/typeApp';
 
-class App {
+class App implements typeApp {
     public controller: AppController;
     public view: AppView;
 
