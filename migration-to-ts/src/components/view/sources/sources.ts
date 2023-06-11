@@ -3,11 +3,11 @@ import './sources.css';
 
 class Sources {
     draw(data: sourcesItems[]): void {
-        const fragment: DocumentFragment = document.createDocumentFragment();
-        const sourceItemTemp = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
+        const fragment: DocumentFragment = <DocumentFragment>document.createDocumentFragment();
+        const sourceItemTemp: HTMLTemplateElement = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 
         data.forEach((item: sourcesItems): void => {
-            const sourceClone = <HTMLTemplateElement>sourceItemTemp.content.cloneNode(true);
+            const sourceClone: HTMLTemplateElement = <HTMLTemplateElement>sourceItemTemp.content.cloneNode(true);
 
             (sourceClone.querySelector('.source__item-name') as HTMLElement).textContent = item.name;
             (sourceClone.querySelector('.source__item') as HTMLElement).setAttribute('data-source-id', item.id);
@@ -15,7 +15,7 @@ class Sources {
             fragment.append(sourceClone);
         });
 
-        const blockSources = <Element>document.querySelector('.sources');
+        const blockSources: HTMLElement = <HTMLElement>document.querySelector('.sources');
         blockSources ? blockSources.append(fragment) : null;
     }
 }
