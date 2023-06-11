@@ -1,5 +1,5 @@
-import { typeNews } from './../types/typeNews';
-import { typeSources } from './../types/typeSources';
+import { typeNews } from './typeNews';
+import { typeSources } from './typeSources';
 
 import { articlesApi } from '../../../types/articlesApi';
 import { sourcesApi } from '../../../types/sourcesApi';
