@@ -3,7 +3,7 @@ import { enumApi } from './enums/enumApi';
 
 class AppLoader extends Loader {
     constructor() {
-        super(enumApi.locUrl1, {
+        super(enumApi.prxUrl1, {
             apiKey: enumApi.apiKey1,
         });
     }
