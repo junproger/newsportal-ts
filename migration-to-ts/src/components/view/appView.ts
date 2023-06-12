@@ -3,7 +3,7 @@ import Sources from './sources/sources';
 
 import { typeappView } from './types/typeappView';
 
-import { articlesApi } from '../../types/articlesApi';
+import { articlesData } from '../../types/articlesData';
 import { sourcesData } from '../../types/sourcesData';
 
 import { articlesItems } from '../../types/articlesItems';
@@ -18,7 +18,7 @@ export class AppView implements typeappView {
         this.sources = new Sources();
     }
 
-    drawNews(data: articlesApi): void {
+    drawNews(data: articlesData): void {
         const values: articlesItems[] = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }

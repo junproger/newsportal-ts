@@ -1,12 +1,12 @@
 import { typeNews } from './typeNews';
 import { typeSources } from './typeSources';
 
-import { articlesApi } from '../../../types/articlesApi';
+import { articlesData } from '../../../types/articlesData';
 import { sourcesData } from '../../../types/sourcesData';
 
 export interface typeappView {
     news: typeNews;
     sources: typeSources;
-    drawNews(data: articlesApi): void;
+    drawNews(data: articlesData): void;
     drawSources(data: sourcesData): void;
 }

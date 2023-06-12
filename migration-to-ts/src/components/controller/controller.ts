@@ -1,7 +1,7 @@
 import AppLoader from './appLoader';
 
 import { sourcesData } from '../../types/sourcesData';
-import { articlesApi } from '../../types/articlesApi';
+import { articlesData } from '../../types/articlesData';
 
 import { typeCallback } from './types/typeCallback';
 
@@ -15,7 +15,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(event: MouseEvent, callback: typeCallback<articlesApi>): void {
+    getNews(event: MouseEvent, callback: typeCallback<articlesData>): void {
         let target: HTMLElement = <HTMLElement>event.target;
         const newsContainer: HTMLElement = <HTMLElement>event.currentTarget;
 

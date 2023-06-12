@@ -1,7 +1,7 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 
-import { articlesApi } from '../../types/articlesApi';
+import { articlesData } from '../../types/articlesData';
 import { sourcesData } from '../../types/sourcesData';
 import { typeApp } from './types/typeApp';
 
@@ -19,7 +19,7 @@ class App implements typeApp {
 
         blockSources
             ? blockSources.addEventListener('click', (event: MouseEvent) =>
-                  this.controller.getNews(event, (data: articlesApi) => this.view.drawNews(data))
+                  this.controller.getNews(event, (data: articlesData) => this.view.drawNews(data))
               )
             : null;
 
