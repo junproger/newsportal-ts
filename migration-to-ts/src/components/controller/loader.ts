@@ -15,7 +15,6 @@ class Loader implements typeLoader {
     getResp<T>(
         { endpoint, options = {} }: typeRequest,
         callback: typeCallback<T> = () => {
-            console.error('No callback for GET response');
             throw new Error('No callback for GET response');
         }
     ) {
@@ -46,7 +45,6 @@ class Loader implements typeLoader {
             .then(this.errorHandler)
             .then((res: Response) => res.json())
             .then((data: T) => {
-                console.log(data);
                 callback(data);
             })
             .catch((err: Error) => {
