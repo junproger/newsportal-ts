@@ -1,5 +1,5 @@
 export interface everythingReq {
-    q: string;
-    sources: string;
-    domains: string;
+    q?: string;
+    sources?: string;
+    domains?: string;
 }

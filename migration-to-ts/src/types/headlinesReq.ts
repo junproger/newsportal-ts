@@ -1,5 +1,5 @@
 export interface headlinesReq {
-    category: string;
-    country: string;
-    sources: string;
+    category?: string;
+    country?: string;
+    sources?: string;
 }

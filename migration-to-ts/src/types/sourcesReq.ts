@@ -1,5 +1,5 @@
 export interface sourcesReq {
-    category: string;
-    language: string;
-    country: string;
+    category?: string;
+    language?: string;
+    country?: string;
 }
