@@ -5,7 +5,8 @@
   // copmpiler
   "compilerOptions": {
     // base
-    "noEmit": true,
+    "noEmit": false,
+    "noEmitOnError": true,
     "target": "es6",
     "module": "es2022",
     "moduleResolution": "node",
