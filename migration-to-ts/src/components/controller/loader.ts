@@ -23,7 +23,9 @@ class Loader implements typeLoader {
 
     errorHandler(res: Response) {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404) throw Error(res.statusText);
+            if (res.status === 401 || res.status === 404) {
+                throw new Error(res.statusText);
+            }
         }
 
         return res;
@@ -48,7 +50,7 @@ class Loader implements typeLoader {
                 callback(data);
             })
             .catch((err: Error) => {
-                throw Error(err.message);
+                throw new Error(err.message);
             });
     }
 }
