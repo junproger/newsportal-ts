@@ -18,12 +18,12 @@ export class AppView implements typeAppView {
         this.sources = new Sources();
     }
 
-    drawNews(data: articlesData): void {
+    public drawNews(data: articlesData): void {
         const values: articlesItems[] = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    drawSources(data: sourcesData): void {
+    public drawSources(data: sourcesData): void {
         const values: sourcesItems[] = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }

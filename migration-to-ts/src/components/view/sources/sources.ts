@@ -4,7 +4,7 @@ import { typeSources } from './../types/typeSources';
 import './sources.css';
 
 class Sources implements typeSources {
-    draw(data: readonly sourcesItems[]): void {
+    public draw(data: readonly sourcesItems[]): void {
         const fragment: DocumentFragment = <DocumentFragment>document.createDocumentFragment();
         const sourceItemTemp: HTMLTemplateElement = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 

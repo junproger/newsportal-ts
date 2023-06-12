@@ -4,7 +4,7 @@ import { typeNews } from './../types/typeNews';
 import './news.css';
 
 class News implements typeNews {
-    draw(data: articlesItems[]): void {
+    public draw(data: articlesItems[]): void {
         const news: articlesItems[] =
             data.length >= 10 ? data.filter((_item: articlesItems, idx: number): boolean => idx < 10) : data;
 
