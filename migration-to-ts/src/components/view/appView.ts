@@ -1,7 +1,7 @@
 import News from './news/news';
 import Sources from './sources/sources';
 
-import { typeappView } from './types/typeappView';
+import { typeAppView } from './types/typeAppView';
 
 import { articlesData } from '../../types/articlesData';
 import { sourcesData } from '../../types/sourcesData';
@@ -9,7 +9,7 @@ import { sourcesData } from '../../types/sourcesData';
 import { articlesItems } from '../../types/articlesItems';
 import { sourcesItems } from '../../types/sourcesItems';
 
-export class AppView implements typeappView {
+export class AppView implements typeAppView {
     public news: News;
     public sources: Sources;
 

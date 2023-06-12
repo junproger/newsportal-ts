@@ -1,8 +1,8 @@
 import AppController from '../../controller/controller';
-import { typeappView } from '../../view/types/typeappView';
+import { typeAppView } from '../../view/types/typeAppView';
 
 export interface typeApp {
     controller: AppController;
-    view: typeappView;
+    view: typeAppView;
     start(): void;
 }
