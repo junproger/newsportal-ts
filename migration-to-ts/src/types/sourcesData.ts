@@ -1,6 +1,6 @@
 import { sourcesItems } from './sourcesItems';
 
-export interface sourcesApi {
+export interface sourcesData {
     status: string;
     sources: sourcesItems[];
 }
