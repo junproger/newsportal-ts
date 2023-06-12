@@ -45,7 +45,7 @@ class Loader implements typeLoader {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())
-            .then((data) => {
+            .then((data: T) => {
                 console.log(data);
                 callback(data);
             })
