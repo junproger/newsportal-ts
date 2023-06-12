@@ -1,6 +1,8 @@
 import { articlesItems } from './../../../types/articlesItems';
 import { typeNews } from './../types/typeNews';
 
+import '../../../assets/placeholder2.png';
+
 import './news.css';
 
 class News implements typeNews {
@@ -17,7 +19,7 @@ class News implements typeNews {
             if (idx % 2) (newsClone.querySelector('.news__item') as HTMLElement).classList.add('alt');
 
             (newsClone.querySelector('.news__meta-photo') as HTMLElement).style.backgroundImage = `url(${
-                item.urlToImage || 'img/news_placeholder.jpg'
+                item.urlToImage || './assets/placeholder2.png'
             })`;
             (newsClone.querySelector('.news__meta-author') as HTMLElement).textContent =
                 item.author || item.source.name;
