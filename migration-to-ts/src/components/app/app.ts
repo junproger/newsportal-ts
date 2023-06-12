@@ -2,7 +2,7 @@ import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
 
 import { articlesApi } from '../../types/articlesApi';
-import { sourcesApi } from '../../types/sourcesApi';
+import { sourcesData } from '../../types/sourcesData';
 import { typeApp } from './types/typeApp';
 
 class App implements typeApp {
@@ -23,7 +23,7 @@ class App implements typeApp {
               )
             : null;
 
-        this.controller.getSources((data: sourcesApi) => this.view.drawSources(data));
+        this.controller.getSources((data: sourcesData) => this.view.drawSources(data));
     }
 }
 
