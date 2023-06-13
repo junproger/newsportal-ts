@@ -15,6 +15,18 @@ class AppController extends AppLoader {
         );
     }
 
+    getCategories(category: string, callback: typeCallback<sourcesData>): void {
+        super.getResp(
+            {
+                endpoint: 'sources',
+                options: {
+                    category: category,
+                },
+            },
+            callback
+        );
+    }
+
     getNews(event: MouseEvent, callback: typeCallback<articlesData>): void {
         let target: HTMLElement = <HTMLElement>event.target;
         const newsContainer: HTMLElement = <HTMLElement>event.currentTarget;
