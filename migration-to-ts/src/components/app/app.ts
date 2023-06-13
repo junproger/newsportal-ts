@@ -15,6 +15,18 @@ class App implements typeApp {
     }
 
     start() {
+        this.controller.getSources((data: sourcesData) => this.view.drawSources(data));
+
+        const choiseCategory: HTMLInputElement = <HTMLInputElement>document.querySelector('#category-choice');
+
+        choiseCategory
+            ? choiseCategory.addEventListener('change', () =>
+                  this.controller.getCategories(choiseCategory.value, (data: sourcesData) =>
+                      this.view.drawSources(data)
+                  )
+              )
+            : null;
+
         const blockSources: HTMLElement = <HTMLElement>document.querySelector('.sources');
 
         blockSources
@@ -22,8 +34,6 @@ class App implements typeApp {
                   this.controller.getNews(event, (data: articlesData) => this.view.drawNews(data))
               )
             : null;
-
-        this.controller.getSources((data: sourcesData) => this.view.drawSources(data));
     }
 }
 
