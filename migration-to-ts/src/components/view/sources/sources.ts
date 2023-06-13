@@ -18,6 +18,7 @@ class Sources implements typeSources {
         });
 
         const blockSources: HTMLElement = <HTMLElement>document.querySelector('.sources');
+        blockSources ? (blockSources.innerHTML = '') : null;
         blockSources ? blockSources.append(fragment) : null;
     }
 }
