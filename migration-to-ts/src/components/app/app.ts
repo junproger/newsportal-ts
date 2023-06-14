@@ -17,11 +17,11 @@ class App implements typeApp {
     start() {
         this.controller.getSources((data: sourcesData) => this.view.drawSources(data));
 
-        const choiseCategory: HTMLInputElement = <HTMLInputElement>document.querySelector('#category-choice');
+        const choiсeCategory: HTMLInputElement = <HTMLInputElement>document.querySelector('#category-choice');
 
-        choiseCategory
-            ? choiseCategory.addEventListener('change', () =>
-                  this.controller.getCategories(choiseCategory.value, (data: sourcesData) =>
+        choiсeCategory
+            ? choiсeCategory.addEventListener('change', () =>
+                  this.controller.getCategories(choiсeCategory.value, (data: sourcesData) =>
                       this.view.drawSources(data)
                   )
               )
