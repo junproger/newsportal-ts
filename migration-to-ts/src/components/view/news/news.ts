@@ -7,8 +7,12 @@ import './news.css';
 
 class News implements ITypeNews {
     public draw(data: IArticleItem[]): void {
+        const ITEMS_PER_PAGE = 10;
+
         const news: IArticleItem[] =
-            data.length >= 10 ? data.filter((_item: IArticleItem, idx: number): boolean => idx < 10) : data;
+            data.length >= ITEMS_PER_PAGE
+                ? data.filter((_item: IArticleItem, idx: number): boolean => idx < ITEMS_PER_PAGE)
+                : data;
 
         const fragment: DocumentFragment = <DocumentFragment>document.createDocumentFragment();
         const newsItemTemp: HTMLTemplateElement = <HTMLTemplateElement>document.querySelector('#newsItemTemp');
