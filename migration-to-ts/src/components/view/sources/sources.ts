@@ -18,8 +18,11 @@ class Sources implements ITypeSources {
         });
 
         const blockSources: HTMLElement = <HTMLElement>document.querySelector('.sources');
-        blockSources ? (blockSources.innerHTML = '') : null;
-        blockSources ? blockSources.append(fragment) : null;
+
+        if (blockSources) {
+            blockSources.innerHTML = '';
+            blockSources.append(fragment);
+        }
     }
 }
 
