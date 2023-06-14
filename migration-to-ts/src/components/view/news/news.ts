@@ -42,8 +42,11 @@ class News implements ITypeNews {
         });
 
         const blockNews: HTMLElement = <HTMLElement>document.querySelector('.news');
-        blockNews ? (blockNews.innerHTML = '') : null;
-        blockNews ? blockNews.appendChild(fragment) : null;
+
+        if (blockNews) {
+            blockNews.innerHTML = '';
+            blockNews.append(fragment);
+        }
     }
 }
 
