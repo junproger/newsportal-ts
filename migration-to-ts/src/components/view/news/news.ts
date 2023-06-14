@@ -1,3 +1,5 @@
+import { DateFormater } from '../utils/DateFormater';
+
 import { IArticleItem } from '../../../types/IArticleItem';
 import { ITypeNews } from './../types/ITypeNews';
 
@@ -27,11 +29,7 @@ class News implements ITypeNews {
             })`;
             (newsClone.querySelector('.news__meta-author') as HTMLElement).textContent =
                 item.author || item.source.name;
-            (newsClone.querySelector('.news__meta-date') as HTMLElement).textContent = item.publishedAt
-                .slice(0, 10)
-                .split('-')
-                .reverse()
-                .join('-');
+            (newsClone.querySelector('.news__meta-date') as HTMLElement).textContent = DateFormater(item.publishedAt);
 
             (newsClone.querySelector('.news__description-title') as HTMLElement).textContent = item.title;
             (newsClone.querySelector('.news__description-source') as HTMLElement).textContent = item.source.name;
