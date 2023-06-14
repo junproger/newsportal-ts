@@ -1,6 +1,6 @@
-import { sourcesItems } from './sourcesItems';
+import { sourceItem } from './sourceItem';
 
 export interface sourcesData {
     status: string;
-    sources: sourcesItems[];
+    sources: sourceItem[];
 }

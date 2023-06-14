@@ -1,4 +1,4 @@
-export interface articlesItems {
+export interface articleItem {
     source: {
         id: string | null;
         name: string | null;

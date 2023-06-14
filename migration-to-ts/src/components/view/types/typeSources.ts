@@ -1,5 +1,5 @@
-import { sourcesItems } from './../../../types/sourcesItems';
+import { sourceItem } from '../../../types/sourceItem';
 
 export interface typeSources {
-    draw(data: readonly sourcesItems[]): void;
+    draw(data: readonly sourceItem[]): void;
 }

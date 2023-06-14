@@ -1,14 +1,14 @@
-import { sourcesItems } from './../../../types/sourcesItems';
+import { sourceItem } from '../../../types/sourceItem';
 import { typeSources } from './../types/typeSources';
 
 import './sources.css';
 
 class Sources implements typeSources {
-    public draw(data: readonly sourcesItems[]): void {
+    public draw(data: readonly sourceItem[]): void {
         const fragment: DocumentFragment = <DocumentFragment>document.createDocumentFragment();
         const sourceItemTemp: HTMLTemplateElement = <HTMLTemplateElement>document.querySelector('#sourceItemTemp');
 
-        data.forEach((item: sourcesItems): void => {
+        data.forEach((item: sourceItem): void => {
             const sourceClone: HTMLTemplateElement = <HTMLTemplateElement>sourceItemTemp.content.cloneNode(true);
 
             (sourceClone.querySelector('.source__item-name') as HTMLElement).textContent = item.name;

@@ -6,8 +6,8 @@ import { typeAppView } from './types/typeAppView';
 import { articlesData } from '../../types/articlesData';
 import { sourcesData } from '../../types/sourcesData';
 
-import { articlesItems } from '../../types/articlesItems';
-import { sourcesItems } from '../../types/sourcesItems';
+import { articleItem } from '../../types/articleItem';
+import { sourceItem } from '../../types/sourceItem';
 
 export class AppView implements typeAppView {
     public news: News;
@@ -19,12 +19,12 @@ export class AppView implements typeAppView {
     }
 
     public drawNews(data: articlesData): void {
-        const values: articlesItems[] = data?.articles ? data?.articles : [];
+        const values: articleItem[] = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
     public drawSources(data: sourcesData): void {
-        const values: sourcesItems[] = data?.sources ? data?.sources : [];
+        const values: sourceItem[] = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
 }

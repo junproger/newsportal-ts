@@ -1,5 +1,5 @@
-import { articlesItems } from './../../../types/articlesItems';
+import { articleItem } from '../../../types/articleItem';
 
 export interface typeNews {
-    draw(data: articlesItems[]): void;
+    draw(data: articleItem[]): void;
 }
