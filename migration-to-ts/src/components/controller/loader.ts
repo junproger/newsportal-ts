@@ -1,20 +1,20 @@
-import { typeCallback } from './types/typeCallback';
-import { typeLoader } from './types/typeLoader';
-import { typeOptions } from './types/typeOptions';
-import { typeRequest } from './types/typeRequest';
+import { TypeCallbackData } from './types/TypeCallbackData';
+import { ITypeLoader } from './types/ITypeLoader';
+import { TypeReqOptions } from './types/TypeReqOptions';
+import { ITypeRequest } from './types/ITypeRequest';
 
-class Loader implements typeLoader {
+class Loader implements ITypeLoader {
     public baseLink: string;
-    public options: typeOptions;
+    public options: TypeReqOptions;
 
-    constructor(baseLink: string, options: typeOptions) {
+    constructor(baseLink: string, options: TypeReqOptions) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
     getResp<T>(
-        { endpoint, options = {} }: typeRequest,
-        callback: typeCallback<T> = () => {
+        { endpoint, options = {} }: ITypeRequest,
+        callback: TypeCallbackData<T> = () => {
             throw new Error('No callback for GET response');
         }
     ) {
@@ -31,7 +31,7 @@ class Loader implements typeLoader {
         return res;
     }
 
-    makeUrl(options: typeOptions, endpoint: string) {
+    makeUrl(options: TypeReqOptions, endpoint: string) {
         const urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
@@ -42,7 +42,7 @@ class Loader implements typeLoader {
         return url.slice(0, -1);
     }
 
-    load<T>(method: string, endpoint: string, callback: typeCallback<T>, options = {}) {
+    load<T>(method: string, endpoint: string, callback: TypeCallbackData<T>, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())

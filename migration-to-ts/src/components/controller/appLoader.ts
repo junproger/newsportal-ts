@@ -1,10 +1,10 @@
 import Loader from './loader';
-import { enumApi } from './enums/enumApi';
+import { EnumReqApi } from './enums/EnumReqApi';
 
 class AppLoader extends Loader {
     constructor() {
-        super(enumApi.prxUrl1, {
-            apiKey: enumApi.apiKey1,
+        super(EnumReqApi.prxUrl1, {
+            apiKey: EnumReqApi.apiKey1,
         });
     }
 }

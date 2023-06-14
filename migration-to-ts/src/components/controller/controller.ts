@@ -1,24 +1,25 @@
 import AppLoader from './appLoader';
+import { EnumReqApi } from './enums/EnumReqApi';
 
-import { sourcesData } from '../../types/sourcesData';
-import { articlesData } from '../../types/articlesData';
+import { ISourcesData } from '../../types/ISourcesData';
+import { IArticlesData } from '../../types/IArticlesData';
 
-import { typeCallback } from './types/typeCallback';
+import { TypeCallbackData } from './types/TypeCallbackData';
 
 class AppController extends AppLoader {
-    getSources(callback: typeCallback<sourcesData>): void {
+    getSources(callback: TypeCallbackData<ISourcesData>): void {
         super.getResp(
             {
-                endpoint: 'sources',
+                endpoint: EnumReqApi.endPoint1,
             },
             callback
         );
     }
 
-    getCategories(category: string, callback: typeCallback<sourcesData>): void {
+    getCategories(category: string, callback: TypeCallbackData<ISourcesData>): void {
         super.getResp(
             {
-                endpoint: 'sources',
+                endpoint: EnumReqApi.endPoint1,
                 options: {
                     category: category,
                 },
@@ -27,7 +28,7 @@ class AppController extends AppLoader {
         );
     }
 
-    getNews(event: MouseEvent, callback: typeCallback<articlesData>): void {
+    getNews(event: MouseEvent, callback: TypeCallbackData<IArticlesData>): void {
         let target: HTMLElement = <HTMLElement>event.target;
         const newsContainer: HTMLElement = <HTMLElement>event.currentTarget;
 
@@ -38,7 +39,7 @@ class AppController extends AppLoader {
                     newsContainer.setAttribute('data-source', sourceId);
                     super.getResp(
                         {
-                            endpoint: 'everything',
+                            endpoint: EnumReqApi.endPoint2,
                             options: {
                                 sources: sourceId,
                             },

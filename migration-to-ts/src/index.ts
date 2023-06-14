@@ -1,8 +1,8 @@
 import App from './components/app/app';
-import { typeApp } from './components/app/types/typeApp';
+import { ITypeApp } from './components/app/types/ITypeApp';
 
 import './global.css';
 import './assets/favicon.ico';
 
-const app: typeApp = new App();
+const app: ITypeApp = new App();
 app.start();

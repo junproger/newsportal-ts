@@ -1,4 +1,4 @@
-export interface articleItem {
+export interface IArticleItem {
     source: {
         id: string | null;
         name: string | null;

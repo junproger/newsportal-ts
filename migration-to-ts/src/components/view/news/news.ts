@@ -1,19 +1,19 @@
-import { articleItem } from '../../../types/articleItem';
-import { typeNews } from './../types/typeNews';
+import { IArticleItem } from '../../../types/IArticleItem';
+import { ITypeNews } from './../types/ITypeNews';
 
 import '../../../assets/placeholder2.png';
 
 import './news.css';
 
-class News implements typeNews {
-    public draw(data: articleItem[]): void {
-        const news: articleItem[] =
-            data.length >= 10 ? data.filter((_item: articleItem, idx: number): boolean => idx < 10) : data;
+class News implements ITypeNews {
+    public draw(data: IArticleItem[]): void {
+        const news: IArticleItem[] =
+            data.length >= 10 ? data.filter((_item: IArticleItem, idx: number): boolean => idx < 10) : data;
 
         const fragment: DocumentFragment = <DocumentFragment>document.createDocumentFragment();
         const newsItemTemp: HTMLTemplateElement = <HTMLTemplateElement>document.querySelector('#newsItemTemp');
 
-        news.forEach((item: articleItem, idx: number): void => {
+        news.forEach((item: IArticleItem, idx: number): void => {
             const newsClone: HTMLTemplateElement = <HTMLTemplateElement>newsItemTemp.content.cloneNode(true);
 
             if (idx % 2) (newsClone.querySelector('.news__item') as HTMLElement).classList.add('alt');

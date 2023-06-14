@@ -1,15 +1,15 @@
 import News from './news/news';
 import Sources from './sources/sources';
 
-import { typeAppView } from './types/typeAppView';
+import { ITypeAppView } from './types/ITypeAppView';
 
-import { articlesData } from '../../types/articlesData';
-import { sourcesData } from '../../types/sourcesData';
+import { IArticlesData } from '../../types/IArticlesData';
+import { ISourcesData } from '../../types/ISourcesData';
 
-import { articleItem } from '../../types/articleItem';
-import { sourceItem } from '../../types/sourceItem';
+import { IArticleItem } from '../../types/IArticleItem';
+import { ISourceItem } from '../../types/ISourceItem';
 
-export class AppView implements typeAppView {
+export class AppView implements ITypeAppView {
     public news: News;
     public sources: Sources;
 
@@ -18,13 +18,13 @@ export class AppView implements typeAppView {
         this.sources = new Sources();
     }
 
-    public drawNews(data: articlesData): void {
-        const values: articleItem[] = data?.articles ? data?.articles : [];
+    public drawNews(data: IArticlesData): void {
+        const values: IArticleItem[] = data?.articles ? data?.articles : [];
         this.news.draw(values);
     }
 
-    public drawSources(data: sourcesData): void {
-        const values: sourceItem[] = data?.sources ? data?.sources : [];
+    public drawSources(data: ISourcesData): void {
+        const values: ISourceItem[] = data?.sources ? data?.sources : [];
         this.sources.draw(values);
     }
 }
