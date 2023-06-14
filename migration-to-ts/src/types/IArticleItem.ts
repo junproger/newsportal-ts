@@ -1,7 +1,7 @@
 export interface IArticleItem {
     source: {
         id: string | null;
-        name: string | null;
+        name: string;
     };
     author: string | null;
     title: string;
