@@ -3,7 +3,7 @@ import { EnumReqApi } from './enums/EnumReqApi';
 
 class AppLoader extends Loader {
     constructor() {
-        super(EnumReqApi.prxUrl1, {
+        super(EnumReqApi.prxUrl3, {
             apiKey: EnumReqApi.apiKey1,
         });
     }
